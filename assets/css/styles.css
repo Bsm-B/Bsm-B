@@ -46,7 +46,7 @@ main {
 ol,
 ul {
   padding: 0 1.1rem 1rem;
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 ul:where([role=list]) {
@@ -54,7 +54,7 @@ ul:where([role=list]) {
 }
 
 ul li {
-  margin-block-end: 0.6rem;
+  margin-block-end: 3rem;
 }
 
 ul li::marker {
