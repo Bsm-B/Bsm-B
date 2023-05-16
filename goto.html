@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>petty redirection page</title>
+  <style>
+  body {
+    font-family:"Arial", cursive;
+  }
+  #page {
+    display: none;
+  }
+  #loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+    /*background-image: url("https://i.stack.imgur.com/FhHRx.gif");*/
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="page">
+  <h1>petty redirection page</h1>
+
+  <p>logicly  this text does not appear but now is too late , So I hope you like my Cute Qoobee ₍ᐢ•ﻌ•ᐢ₎</p>
+  
+
+</div>
+
+
+<div id="loading">
+ <h2> Loading page</h2>
+</div>
+
+<!-- partial -->
+<script>
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 15000);
+    const min = 1;
+    const max = 14;
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    const imageUrl = `image/qoobee${randomNum}.gif`;
+
+    const randomBackgroundElement = document.getElementById('loading');
+    randomBackgroundElement.style.backgroundImage = `url('${imageUrl}')`;
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+
+    // Get the value of the 'redirect' parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get('redirect');
+
+
+    if (redirectUrl !== null) {
+    window.location.href = redirectUrl;
+    }
+
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+  </script>
+
+</body>
+</html>
