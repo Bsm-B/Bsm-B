@@ -537,14 +537,9 @@ figcaption {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin: 10px;
 }
-.newsletter__form .fields input[type=email] {
-  min-width: 0;
-  flex: 1 1 250px;
-}
-.newsletter__form .fields button[type=submit] {
-  flex: 1 1 150px;
-}
+
 
 .rss-feeds {
   display: grid;

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<meta charset="UTF-8">
+
+<head>
+    <title>Bessem Bousselmi - 🍩 Contact </title>
+
+    <!-- The favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <meta property="og:title" content="Contact Bessem Bousselmi — Embedded product developer and trainer">
+    <meta property="og:description" content="Stay in touch with Bessem Bousselmi">
+    <meta property="og:image" content="../assets/images/basboussa/Bessem.png" />
+
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("..//template/header.html");
+            $("#footer").load("../template/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main id="main">
+        <section class="slice">
+            <div class="content-container grid">
+                <div style="grid-column: 1 / 7;">
+               <svg class="rss-feeds__logo" aria-hidden="true" focusable="false" viewBox="0 0 100 100"
+                            width="100" height="100">
+                        <path fill="currentColor"
+                            d="M72.518,81.874c2.472,0.544,6.959,0.325,9.171-0.806c2.705-5.296-2.105-20.127-4.598-25.439  c-3.407-7.262-6.841-13.486-12.559-19.19c-4.278-4.269-12.649-10.59-18.219-13.026c-3.629-1.587-7.125-3.34-10.811-4.812  c-2.389-0.955-11.198-2.807-12.871-1.037c1.52,1.037,8.254,2.816,10.637,3.775c18.54,7.46,30.367,15.303,39.455,33.618  c2.232,4.498,7.213,18.255,5.64,22.785l-3.317,0.336c-2.051-3.21-1.255-15.801-18.327-33.825  c-5.188-5.478-8.782-6.881-14.656-11.045c-1.915-1.358-6.41-3.451-8.653-4.45c-3.635-1.617-6.845-1.743-10.175-2.928  c-1.562-3.393,0.228-6.205-2.821-7.056c-2.962,1.54-2.031,8.906,0.908,10.482c2.314,1.241,8.057,2.022,11.24,3.374  c13.792,5.864,24.121,15.295,31.614,27.853c1.738,2.912,3.78,6.604,4.836,9.78C70.097,73.532,70.491,79.618,72.518,81.874z">
+                        </path>
+                        <path fill="currentColor"
+                            d="M20.01,38.329c1.071,0.662,13.207,2.312,24.37,14.233c4.678,4.995,14.908,18.738,12.919,25.785l-4.203,0.964  c-3.225-2.399,0.16-7.842-11.491-19.437c-3.701-3.682-7.955-7.592-12.721-9.957c-2.425-1.203-4.272-1.163-6.052-2.011l-0.676-5.346  l-1.773-1.132c-2.412,1.193-1.832,4.147-1.535,6.429c0.854,6.566,6.427,1.474,16.714,11.508c2.561,2.498,6.939,6.871,8.946,9.7  c3.283,4.627,3.368,11.501,5.233,13.918c2.528,0.42,8.744,0.226,10.768-1.426c2.141-1.746,0.567-7.827,0.065-10.418  C58.359,59.681,32.385,30.341,20.01,38.329z">
+                        </path>
+                        <path fill="currentColor"
+                            d="M30.295,82.587c12.452-3.887,8.66-24.661-5.447-20.57c-2.456,0.712-5.402,1.403-6.334,4.249  C14.828,77.52,21.865,85.218,30.295,82.587z M21.432,70.194c1.605-8.076,14.805-4.763,11.982,3.919  C30.615,82.722,19.489,79.975,21.432,70.194z">
+                        </path>
+                    </svg>
+                    <h1 class="slice__title">Contact !</h1>
+                    <p>Every 2–3 weeks, I send out an <strong>email newsletter</strong> with useful <strong>exclusive
+                            content</strong>, insider tips, links, resources, and latest updates on design engineering —
+                        from my own work as well as the work and articles created by smart people in the Web community.
+                    </p>
+                
+                    <form class="newsletter__form" action=""
+                        method="POST" aria-label="Send Email">
+                        <div role="status" id="newsletter-success"></div>
+                        <div role="alert" id="newsletter-error"></div>
+                        
+                        <label for="name">
+                            <span class="label__text">Name</span>
+                        </label>
+                        <div class="fields">
+                            <input type="text" id="name" name="text">
+                        </div>
+
+                        <label for="subject">
+                            <span class="label__text">Subject</span>
+                        </label>
+                        <div class="fields">
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <label for="email">
+                            <span class="label__text">E-mail</span>
+                        </label>
+                        <div class="fields">
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <label for="Message">
+                            <span class="label__text">Message</span>
+                        </label>
+                        <div>
+                            <textarea  class="fields" id="message" name="message" rows="4" cols="50">tra tra traa !! </textarea>                        </div>
+                        <div class="fields">
+                        <button class="btn" type="submit">Push</button>
+                        </div>
+                    </form>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>

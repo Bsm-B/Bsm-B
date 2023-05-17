@@ -1,86 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>petty redirection page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400|Sniglet:800" rel="stylesheet" type="text/css">
+  <title>Petty redirection page ...</title>
   <style>
-  body {
-    font-family:"Arial", cursive;
-  }
-  #page {
-    display: none;
-  }
-  #loading {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 1);
-    /*background-image: url("https://i.stack.imgur.com/FhHRx.gif");*/
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+    body {
+      font-family: "Arial", cursive;
+    }
+
+    #page {
+      display: none;
+    }
+
+    #loading {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 1);
+      /*background-image: url("https://i.stack.imgur.com/FhHRx.gif");*/
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #txt_title {
+      top: 50%;
+      left: 50%;
+      font-family: 'Sniglet', cursive;
+      text-align: center;
+      color: #5D616D;
+    }
+
+    #txt {
+      top: 50%;
+      left: 50%;
+      font-family: 'Sniglet', cursive;
+      text-align: center;
+      color: #000000;
+    }
   </style>
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div id="page">
-  <h1>petty redirection page</h1>
+  <!-- partial:index.partial.html -->
+  <div id="page">
+    <h1>petty redirection page</h1>
 
-  <p>logicly  this text does not appear but now is too late , So I hope you like my Cute Qoobee ₍ᐢ•ﻌ•ᐢ₎</p>
-  
-
-</div>
+    <p>logicly this text does not appear but now is too late , So I hope you like my Cute Qoobee ₍ᐢ•ﻌ•ᐢ₎</p>
 
 
-<div id="loading">
- <h2> Loading page</h2>
-</div>
+  </div>
 
-<!-- partial -->
-<script>
 
-function onReady(callback) {
-    var intervalID = window.setInterval(checkReady, 15000);
-    const min = 1;
-    const max = 14;
-    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    const imageUrl = `image/qoobee${randomNum}.gif`;
+  <div id="loading">
+    <h1 id="txt_title"> Loading page</h1>
+    <h2 id="txt"></h2>
+  </div>
 
-    const randomBackgroundElement = document.getElementById('loading');
-    randomBackgroundElement.style.backgroundImage = `url('${imageUrl}')`;
-    function checkReady() {
+  <!-- partial -->
+  <script>
+
+    var stringArray = [
+      "Let's dance together before you are redirected to another page.",
+      "Why are you in a hurry? Wait until I finish eating my donuts.",
+      "Isn't it beautiful? Enjoy it before you move to another page.",
+      "Mm, wait till I get a taste of your machine, and then we'll see where I can take you.",
+      "Goodbye... Don't come back... Haha, just kidding! I'll be waiting for you.",
+      "Aaaaa f999k, wait a moment, I had trouble clicking on the link.",
+      "This rose is beautiful, just like you.",
+      "You are so beautiful. Don't forget to come back.",
+      "Where did the page go? Can you help me search for it?",
+      "Come dance with me until I send you to the next page.",
+      "Are you really leaving and never coming back? That's what I see in your face.",
+      "Thank you for visiting. Come back and find out more.",
+      "You're looking for it to redirect you to another page? Haha, you...."
+    ];
+
+    function onReady(callback) {
+      var intervalID = window.setInterval(checkReady, 5000);
+      const min = 1;
+      const max = 13;
+      const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      const randomTextElement = document.getElementById('txt');
+      randomTextElement.innerHTML = stringArray[randomNum - 1];
+      const imageUrl = `assets/images/gif/qoobee${randomNum}.gif`;
+      const randomBackgroundElement = document.getElementById('loading');
+      randomBackgroundElement.style.backgroundImage = `url('${imageUrl}')`;
+      function checkReady() {
         if (document.getElementsByTagName('body')[0] !== undefined) {
-            window.clearInterval(intervalID);
-            callback.call(this);
+          window.clearInterval(intervalID);
+          // Get the value of the 'redirect' parameter from the URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const redirectUrl = urlParams.get('redirect');
+
+          if (redirectUrl !== null) {
+            window.location.href = redirectUrl;
+          } else {
+            show('page', true);
+            show('loading', false);
+          }
+
         }
-    }
-}
-
-function show(id, value) {
-
-    // Get the value of the 'redirect' parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirectUrl = urlParams.get('redirect');
-
-
-    if (redirectUrl !== null) {
-    window.location.href = redirectUrl;
+      }
     }
 
-    document.getElementById(id).style.display = value ? 'block' : 'none';
+    function show(id, value) {
+      document.getElementById(id).style.display = value ? 'block' : 'none';
 
-}
+    }
 
-onReady(function () {
-    show('page', true);
-    show('loading', false);
-});
+    onReady(function () {
+      show('page', true);
+      show('loading', false);
+    });
   </script>
 
 </body>
+
 </html>
