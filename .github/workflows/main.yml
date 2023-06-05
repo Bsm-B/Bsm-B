@@ -14,3 +14,4 @@ jobs:
         server: ftp.cluster021.hosting.ovh.net
         username: bousselmma
         password: ${{ secrets.password }}
+        server-dir: ./www/
