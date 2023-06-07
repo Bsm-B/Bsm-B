@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<meta charset="UTF-8">
+
+<head>
+    <title>Bousselmi - 🐱‍💻 Portfolio </title>
+
+    <!-- The favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <meta property="og:title" content="Contact Bessem Bousselmi — Embedded product developer and trainer">
+    <meta property="og:description" content="Stay in touch with Bessem Bousselmi">
+    <meta property="og:image" content="../assets/images/basboussa/Bessem.png" />
+
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("..//template/header.html");
+            $("#footer").load("../template/footer.html");
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js'></script>
+   
+
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            border: 25px solid #000;
+            overflow: auto;
+        }
+
+        .title-section {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .title-section h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 42px;
+        }
+
+        .gallery {
+            margin: auto;
+            padding: 60px;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .gallery .item {
+            width: 24%;
+            height: 200px;
+            background: #000;
+            margin-bottom: 1px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery .item .desc {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: all 300ms ease;
+            opacity: 0;
+        }
+
+        .gallery .item .desc h4 {
+            color: #000;
+            font-weight: 300;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: all 300ms ease;
+            transition-delay: 0.3s;
+            font-size: 2em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery .item img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            transition: all 700ms ease;
+            transform: translate(0, 0) scale(1.2);
+            filter: grayscale(1) blur(2px);
+        }
+
+        .gallery .item:hover .desc {
+            opacity: 1;
+        }
+
+        .gallery .item:hover .desc h4 {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery .item:hover img {
+            width: 100%;
+            max-width: 100%;
+            transform: translate(0) scale(1);
+            filter: sepia(1);
+        }
+
+        @media all and (max-width: 1500px) {
+            .gallery .item {
+                width: 33%;
+                height: 240px;
+            }
+        }
+
+        @media all and (max-width: 1180px) {
+            .gallery .item {
+                width: 49%;
+                height: 220px;
+            }
+        }
+
+        @media all and (max-width: 920px) {
+            .gallery .item {
+                height: 200px;
+            }
+        }
+
+        @media all and (max-width: 780px) {
+            .gallery {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .gallery .item {
+                width: 100%;
+                height: 240px;
+            }
+        }
+
+        @media all and (max-width: 580px) {
+            .gallery .item {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        .project-view {
+            width: 70%;
+            height: 100%;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: #fff;
+            transform: translateX(100%);
+            transition: all 400ms ease;
+            z-index: 12;
+            border-top: 25px solid #000;
+        }
+
+        .project-view .project-article-header {
+            text-align: center;
+            height: 30vh;
+            background-size: 100% !important;
+            position: relative;
+        }
+
+        .project-view .project-article-header .project-article-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .project-view .project-article-header .project-article-title h1 {
+            font-size: 2em;
+            font-weight: 300;
+            margin: 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .project-view .project-article-content {
+            padding: 5%;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .project-view .project-article-content p {
+            font-size: 1em;
+        }
+
+        .project-view .project-article-content img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            filter: sepia(1);
+        }
+
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.87);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 200ms ease;
+            z-index: 10;
+        }
+
+        .articles-navigation {
+            position: fixed;
+            top: 55px;
+            left: 25px;
+            height: 40px;
+        }
+
+        .close,
+        .next-btn,
+        .prev-btn {
+            float: left;
+        }
+
+        .close {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            position: relative;
+            transform: rotate(-45deg);
+        }
+
+        .close div {
+            width: 60px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+        }
+
+        .close div:nth-child(1) {
+            transform: translate(-50%, -50%);
+        }
+
+        .close div:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .next-btn {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            position: relative;
+            transform: rotate(0deg);
+        }
+
+        .next-btn div {
+            width: 30px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+        }
+
+        .next-btn div:nth-child(1) {
+            transform: rotate(-45deg) translate(-50%, -50%);
+        }
+
+        .next-btn div:nth-child(2) {
+            transform: rotate(45deg) translate(-50%, 0);
+        }
+
+        /* 이전 버튼 */
+        .prev-btn {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            position: relative;
+            transform: rotate(-180deg);
+        }
+
+        .prev-btn div {
+            width: 30px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+        }
+
+        .prev-btn div:nth-child(1) {
+            transform: rotate(-45deg) translate(-50%, -50%);
+        }
+
+        .prev-btn div:nth-child(2) {
+            transform: rotate(45deg) translate(-50%, 0);
+        }
+
+        .article-opened .project-view {
+            transform: translate(0);
+        }
+
+        .article-opened .overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #article-contents {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main id="main">
+
+        <!-- partial:index.partial.html -->
+        <div class="overlay">
+            <div class="articles-navigation">
+                <div class="prev-btn">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="close">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="next-btn">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="title-section">
+            <h1>Gallery</h1>
+            <p>Click on gallery images to open full project informations</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-inner">
+                <div class="item grid-sizer" data-article="article-1">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 1</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-2">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 2</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-3">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 3</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-4">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc" data-article="article-5">
+                            <h4>Title 4</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-5">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 5</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-6">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 6</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-7">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 7</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" data-article="article-8">
+                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                        <div class="desc">
+                            <h4>Title 8</h4>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section class="project-view">
+            <div class="project-container">
+                <article class="project-content">
+                    <header class="project-article-header"></header>
+                    <section class="project-article-content"></section>
+                    <footer class="project-article-footer"></footer>
+                </article>
+            </div>
+        </section>
+
+        <section id="article-contents">
+            <div class="article-html" data-article="article-1">
+                <h2>Article 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Quisque consequat tincidunt sollicitudin. Vivamus
+                    et urna id diam porttitor laoreet. Cras erat justo,
+                    eleifend quis commodo sed, ultrices nec tellus. Duis fermentum, orci et porta elementum, elit ligula
+                    lobortis arcu, quis consequat ante quam sed sapien. Pellentesque molestie id tortor non sodales.
+                    Donec luctus erat et purus tincidunt, iaculis
+                    tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
+                    laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui<img
+                        src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />laoreet,
+                    id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-2">
+                <h2>Bonjour</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui<img
+                        src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />laoreet,
+                    id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-3">
+                <h2>Comment ça va ?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem.</p>
+                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p>
+                <p> Nunc ultricies lorem vel dui laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem.
+                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p> Nunc ultricies lorem vel dui
+                laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-4">
+                <h2>Hello !</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+
+            </div>
+
+            <div class="article-html" data-article="article-5">
+                <h2>Article title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-6">
+                <h2>Article 6</h2>
+                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
+                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
+                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-7">
+                <h2>Article 7</h2>
+                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
+                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
+                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+            <div class="article-html" data-article="article-8">
+                <h2>Article 8</h2>
+                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
+                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
+                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
+                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
+                    risus faucibus. Donec vehicula imperdiet ex, et
+                    euismod lectus.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        $('.gallery-inner').isotope({
+    itemSelector: '.item',
+    masonry: {
+        columnWidth: '.grid-sizer',
+        gutter: 1
+    }
+}).isotope('layout');
+
+var i = null;
+
+$('.gallery-inner .item').on('click', function(event) {
+    event.stopPropagation();
+
+    var clickedArticle = $(this);
+    var thisIndex = $(this).index();
+
+    imgToShow = clickedArticle.find('img').attr('src');
+    articleLink = clickedArticle.data('article');
+    articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
+    articleTitle = clickedArticle.find('.desc h4').html();
+    i = clickedArticle.index();
+    var n = 1;
+
+    changeArticle();
+
+    $('.next-btn').click(function(event) {
+        event.stopPropagation();
+        
+        i++;
+        
+        if (i > $('.item').length - 1) {
+            i = 0;
+        }
+
+        var clickedArticle = $('.item:eq(' + (i) + ')');
+
+        console.log('New article ' + i + ' : ');
+        console.log(clickedArticle);
+        imgToShow = clickedArticle.find('img').attr('src');
+        articleLink = clickedArticle.data('article');
+        articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
+        articleTitle = clickedArticle.find('.desc h4').html();
+
+        changeArticle();
+    });
+
+    $('.prev-btn').click(function(event) {
+        event.stopPropagation();
+        
+        i--;
+        
+        if (i < 0 ) {
+            i = $('.item').length - 1;
+        }
+
+        var clickedArticle = $('.item:eq(' + i + ')');
+        console.log('New article ' + i + ' : ');
+        console.log(clickedArticle);
+        imgToShow = clickedArticle.find('img').attr('src');
+        articleLink = clickedArticle.data('article');
+        articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
+        articleTitle = clickedArticle.find('.desc h4').html();
+
+        changeArticle();
+    });
+
+    function changeArticle() {
+        $('.project-container').hide();
+
+        $('.project-view .project-article-header').css({
+            'background': 'url(' + imgToShow + ') no-repeat top fixed'
+        });
+
+        $('.project-view .project-article-content').html('<div class="appended-data">' + articleData + '</div>');
+        $('.project-article-header').html('<div class="project-article-title"><h1>' + articleTitle + '</h1></div>');
+
+        $('.project-container').fadeIn(500);
+    }
+
+    if (!$('body').hasClass('article-opened')) {
+        $('body').addClass('article-opened');
+    } else {
+        $('body').removeClass('article-opened');
+    }
+});
+
+$('.project-view').on('click', function(event) {
+    event.stopPropagation();
+});
+
+$('html, body, .overlay, .close').on('click', function() {
+    $('body').removeClass('article-opened');
+});
+    </script>
+    <div id="footer"></div>
+</body>
+
+</html>
