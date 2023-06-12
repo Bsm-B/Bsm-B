@@ -32,6 +32,7 @@
    
 
     <style>
+        /*
         img {
             max-width: 100%;
             height: auto;
@@ -105,7 +106,7 @@
             max-width: 100%;
             transition: all 700ms ease;
             transform: translate(0, 0) scale(1.2);
-            filter: grayscale(1) blur(2px);
+            filter: blur(1px);
         }
 
         .gallery .item:hover .desc {
@@ -296,7 +297,6 @@
             transform: rotate(45deg) translate(-50%, 0);
         }
 
-        /* 이전 버튼 */
         .prev-btn {
             width: 60px;
             height: 60px;
@@ -335,16 +335,114 @@
             display: none;
             visibility: hidden;
         }
+        */
+        *:before,
+*:after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.title-section {
+        padding: 60px;
+        text-align: center;
+    }
+
+    .title-section h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 42px;
+    }
+
+
+.container {
+  width: 1400px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 20px;
+}
+
+.container .box {
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.container .box img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: calc(100% - 40px);
+    columns: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    columns: 1;
+  }
+}
     </style>
-    </style>
+    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
+
 </head>
 
 <body>
     <div id="header"></div>
 
     <main id="main">
+        <section class="title-section">
+            <h1>Portfolio</h1>
+              <p><i><q>As My Work Is, So Am I</q> - van Gogh</i>     </p>  
+        </section>
+        <div class="container">
+     
+            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/qoobinoo.jpg"
+                alt="Development board"></div>
+            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/candybar.jpg" alt="ESP32 board" />
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/yumbig1.jpg"
+                alt="Yumbig Mobile App"></div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Elissa.jpeg"
+                alt="Elissa Linux Board"></div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Piebook_g.jpg" alt=""> </div>
+            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/youpi.jpg"
+                alt="Youpi Smart aquarium" /></div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/cobot.jpeg" alt="">
+            </div>
+            <div class="box"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/sadi9i.png" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hobbystart.png" alt=""></div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/App-bousselmi.png" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/gps-tracker.png" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/lollipinno.jpg" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hand.jpg" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/flutter.jpeg" alt="">
+            </div>
+            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/stm32.jpeg" alt="">
+            </div>
+      
+      
+            </div>
 
-        <!-- partial:index.partial.html -->
+        <!-- partial:index.partial.html 
         <div class="overlay">
             <div class="articles-navigation">
                 <div class="prev-btn">
@@ -363,63 +461,64 @@
         </div>
 
         <section class="title-section">
-            <h1>Gallery</h1>
-            <p>Click on gallery images to open full project informations</p>
+            <h1>Portfolio</h1>
+              <p><i><q>As My Work Is, So Am I</q> - van Gogh</i>     </p>  
         </section>
 
         <section class="gallery">
             <div class="gallery-inner">
                 <div class="item grid-sizer" data-article="article-1">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/qoobinoo.jpg" alt="Development board">
                         <div class="desc">
-                            <h4>Title 1</h4>
+                            <h4>Qoobinoo</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-2">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img  class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/candybar.jpg"  alt="ESP32 board"/>
                         <div class="desc">
-                            <h4>Title 2</h4>
+                            <h4>ESP32 Board</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-3">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img   class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/Youpi.jpg"  alt="Youpi Smart aquarium"/>
                         <div class="desc">
-                            <h4>Title 3</h4>
+                            <h4>Youpi - Smart Aquarium</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-4">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Elissa.jpeg" alt="Elissa Linux Board">
                         <div class="desc" data-article="article-5">
-                            <h4>Title 4</h4>
+                            <h4>Elissa Linux Board</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-5">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/yumbig1.jpg" alt="Yumbig Mobile App">
+
                         <div class="desc">
                             <h4>Title 5</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-6">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Bousselmi-market.jpg" alt="Bousselmi-market Mobile App">
                         <div class="desc">
-                            <h4>Title 6</h4>
+                            <h4>Bousselmi Market</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-7">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img src="https://media.istockphoto.com/id/898457432/photo/multicolored-donuts-close-up.jpg?s=2048x2048&w=is&k=20&c=ctTp2QU8hqo_rmn_zxd9GSuxXZjlWXcAEe-Ihm9lggc=" />
                         <div class="desc">
                             <h4>Title 7</h4>
                         </div>
                     </a>
                 </div>
                 <div class="item" data-article="article-8">
-                    <a href="#_"><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />
+                    <a href="#_"><img src="https://media.istockphoto.com/id/546019916/photo/donuts-on-color-background.jpg?s=2048x2048&w=is&k=20&c=3YgLX9IAYyZulgYSj-Vc0EaWLL88XimUkB8qOv7k3C0=" />
                         <div class="desc">
                             <h4>Title 8</h4>
                         </div>
@@ -744,6 +843,9 @@
                     euismod lectus.</p>
             </div>
         </section>
+    -->
+
+    
     </main>
     <script>
         $('.gallery-inner').isotope({
