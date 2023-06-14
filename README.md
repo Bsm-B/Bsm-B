@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-first visit my personal website : https://www.bousselmi.tn
+first visit my personal website : http://www.bousselmi.tn
 
 - 🔭 I’m currently working on Fakrouna Project
 - 🌱 I’m currently learning on Hardware Product
