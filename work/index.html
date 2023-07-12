@@ -29,10 +29,9 @@
         });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js'></script>
-   
+
 
     <style>
-        /*
         img {
             max-width: 100%;
             height: auto;
@@ -57,111 +56,9 @@
             font-size: 42px;
         }
 
-        .gallery {
-            margin: auto;
-            padding: 60px;
-            padding-top: 0;
-            text-align: center;
-        }
+        .desc {
+            display: none;
 
-        .gallery .item {
-            width: 24%;
-            height: 200px;
-            background: #000;
-            margin-bottom: 1px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery .item .desc {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.4);
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            transition: all 300ms ease;
-            opacity: 0;
-        }
-
-        .gallery .item .desc h4 {
-            color: #000;
-            font-weight: 300;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: all 300ms ease;
-            transition-delay: 0.3s;
-            font-size: 2em;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            margin: 0;
-            padding: 0;
-        }
-
-        .gallery .item img {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            transition: all 700ms ease;
-            transform: translate(0, 0) scale(1.2);
-            filter: blur(1px);
-        }
-
-        .gallery .item:hover .desc {
-            opacity: 1;
-        }
-
-        .gallery .item:hover .desc h4 {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .gallery .item:hover img {
-            width: 100%;
-            max-width: 100%;
-            transform: translate(0) scale(1);
-            filter: sepia(1);
-        }
-
-        @media all and (max-width: 1500px) {
-            .gallery .item {
-                width: 33%;
-                height: 240px;
-            }
-        }
-
-        @media all and (max-width: 1180px) {
-            .gallery .item {
-                width: 49%;
-                height: 220px;
-            }
-        }
-
-        @media all and (max-width: 920px) {
-            .gallery .item {
-                height: 200px;
-            }
-        }
-
-        @media all and (max-width: 780px) {
-            .gallery {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .gallery .item {
-                width: 100%;
-                height: 240px;
-            }
-        }
-
-        @media all and (max-width: 580px) {
-            .gallery .item {
-                width: 100%;
-                height: 200px;
-            }
         }
 
         .project-view {
@@ -216,7 +113,7 @@
             display: block;
             margin: 20px auto;
             max-width: 100%;
-            filter: sepia(1);
+
         }
 
         .overlay {
@@ -227,7 +124,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.87);
+            background: rgba(0, 0, 0, 0.67);
             opacity: 0;
             visibility: hidden;
             transition: all 200ms ease;
@@ -242,10 +139,7 @@
         }
 
         .close,
-        .next-btn,
-        .prev-btn {
-            float: left;
-        }
+
 
         .close {
             width: 60px;
@@ -272,56 +166,6 @@
             transform: translate(-50%, -50%) rotate(90deg);
         }
 
-        .next-btn {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-            position: relative;
-            transform: rotate(0deg);
-        }
-
-        .next-btn div {
-            width: 30px;
-            height: 2px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            background: #fff;
-        }
-
-        .next-btn div:nth-child(1) {
-            transform: rotate(-45deg) translate(-50%, -50%);
-        }
-
-        .next-btn div:nth-child(2) {
-            transform: rotate(45deg) translate(-50%, 0);
-        }
-
-        .prev-btn {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-            position: relative;
-            transform: rotate(-180deg);
-        }
-
-        .prev-btn div {
-            width: 30px;
-            height: 2px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            background: #fff;
-        }
-
-        .prev-btn div:nth-child(1) {
-            transform: rotate(-45deg) translate(-50%, -50%);
-        }
-
-        .prev-btn div:nth-child(2) {
-            transform: rotate(45deg) translate(-50%, 0);
-        }
-
         .article-opened .project-view {
             transform: translate(0);
         }
@@ -335,65 +179,109 @@
             display: none;
             visibility: hidden;
         }
-        */
+
         *:before,
-*:after,
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        *:after,
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
 
-.title-section {
-        padding: 60px;
-        text-align: center;
-    }
+        .title-section {
+            padding: 60px;
+            text-align: center;
+        }
 
-    .title-section h1 {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 42px;
-    }
+        .title-section h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 42px;
+        }
 
 
-.container {
-  width: 1400px;
-  margin: 20px auto;
-  columns: 4;
-  column-gap: 20px;
-}
+        .container {
+            width: 1400px;
+            margin: 20px auto;
+            columns: 4;
+            column-gap: 20px;
+        }
 
-.container .box {
-  width: 100%;
-  margin-bottom: 10px;
-  break-inside: avoid;
-}
+        .container .box {
+            width: 100%;
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
 
-.container .box img {
-  max-width: 100%;
-  border-radius: 15px;
-}
+        .container .box img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
 
-@media (max-width: 1200px) {
-  .container {
-    width: calc(100% - 40px);
-    columns: 3;
-  }
-}
+        @media (max-width: 1200px) {
+            .container {
+                width: calc(100% - 40px);
+                columns: 3;
+            }
+        }
 
-@media (max-width: 768px) {
-  .container {
-    columns: 2;
-  }
-}
+        @media (max-width: 768px) {
+            .container {
+                columns: 2;
+            }
+        }
 
-@media (max-width: 480px) {
-  .container {
-    columns: 1;
-  }
-}
+        @media (max-width: 480px) {
+            .container {
+                columns: 1;
+            }
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .tag 
+        {
+        opacity: 0;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: red;
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        transition: .5s ease;
+        }
+
+
+        .text {
+            position: absolute;
+            text-align: left;
+            bottom: 9px;
+            left: 0px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        .box:hover .middle {
+            opacity: 1;
+        }
+        .box:hover .tag {
+            opacity: 1;
+        }
+
     </style>
     <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 
@@ -406,134 +294,200 @@
     <main id="main">
         <section class="title-section">
             <h1>Portfolio</h1>
-              <p><i><q>As My Work Is, So Am I</q> - van Gogh</i>     </p>  
+            <p><i><q>As My Work Is, So Am I</q> - van Gogh</i> </p>
         </section>
         <div class="container">
-     
-            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/qoobinoo.jpg"
-                alt="Development board"></div>
-            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/candybar.jpg" alt="ESP32 board" />
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/yumbig1.jpg"
-                alt="Yumbig Mobile App"></div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Elissa.jpeg"
-                alt="Elissa Linux Board"></div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Piebook_g.jpg" alt=""> </div>
-            <div class="box"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/youpi.jpg"
-                alt="Youpi Smart aquarium" /></div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/cobot.jpeg" alt="">
-            </div>
-            <div class="box"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/sadi9i.png" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hobbystart.png" alt=""></div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/App-bousselmi.png" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/gps-tracker.png" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/lollipinno.jpg" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hand.jpg" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/flutter.jpeg" alt="">
-            </div>
-            <div class="box"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/stm32.jpeg" alt="">
-            </div>
-      
-      
+            <div class="box" data-article="article-1">
+                <a href="#"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/qoobinoo.jpg"
+                        alt="Development board"></a>
+                    <div class="tag">Hardware Design</div>
+                <div class="middle">
+                    <div class="text"> #Atmel #Concept #Hardware    #AL/ML #PCB</div>
+                </div>
             </div>
 
-        <!-- partial:index.partial.html 
+            <div class="box" data-article="article-2">
+                <a href="#"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/candybar.jpg"
+                        alt="ESP32 board" />
+                </a>
+          
+                <div class="tag">Hardware Design</div>
+        
+                <div class="middle">
+                    <div class="text">#Product_Design #Wifi #Concept #PCB</div>
+                </div>
+            </div>
+
+            <div class="box" data-article="article-3">
+                <a href="#"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/yumbig1.jpg"
+                        alt="Yumbig Mobile App"></a>
+     
+                        <div class="tag">Mobile Application Development</div>
+        
+                        <div class="middle">
+                            <div class="text">#Flutter #Firebase #Larvel #Android #iOS</div>
+                        </div>
+            </div>
+
+
+            <div class="box" data-article="article-4">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Elissa.jpeg"
+                        alt="Elissa Linux Board"></a>
+                        <div class="tag">Hardware Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#Embedded_Linux #Allwinner #A13 #Linux #PCB</div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-5">
+                <a href="#"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Piebook_g.jpg"
+                        alt="Concept of new produt"></a>
+      
+                        <div class="tag">Product Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#Concept #SolidWorks #Production #Consumer_electronics
+                            </div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-6">
+                <a href="#"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/youpi.jpg"
+                        alt="Youpi Smart aquarium" /></a>
+     
+                        <div class="tag">Product Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#Iot #IHM #Concept #Consumer_electronics
+                            </div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-7">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/cobot.jpeg"
+                        alt="Concept of robot"></a>
+         
+                        <div class="tag">Robotics</div>
+        
+                        <div class="middle">
+                            <div class="text">#Software #Concept #Solidworks #RaspberryPI
+                            </div>
+                        </div>
+            </div>
+
+
+            <div class="box" data-article="article-8">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/sadi9i.png"
+                        alt="Screenshot of sadi9i website"></a>
+      
+                        <div class="tag">Web Development</div>
+        
+                        <div class="middle">
+                            <div class="text">#Wordpres #Database #Website
+                            </div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-9">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hobbystart.png"
+                        alt="Screenshot of hobbystart website"></a>
+
+                        <div class="tag">Web Development</div>
+        
+                        <div class="middle">
+                            <div class="text">#Prestashop #Database #Website
+                            </div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-10">
+                <a href="#"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/App-bousselmi.png"
+                        alt="Bousselmi mobile Application"></a>
+
+                        <div class="tag">Mobile Application Development</div>
+        
+                        <div class="middle">
+                            <div class="text">#Flutter #Larvel #Android #MySQL
+                            </div>
+                        </div>
+            </div>
+
+
+            <div class="box" data-article="article-11">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/gps-tracker.png"
+                        alt="Protoype of GPS gps-tracker"> </a>
+                        <div class="tag">Hardware Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#Atmel #GPS #GSM #PCB</div>
+                        </div>
+            </div>
+
+            <div class="box" data-article="article-12">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/lollipinno.jpg"
+                        alt="lollipinno Pcb Protoype"></a>
+                        <div class="tag">Hardware Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#Atmel #PCB #Concept #Arduino  #Protoytpe</div>
+                        </div>
+
+            </div>
+
+            <div class="box" data-article="article-13">
+                <a href="#"> <img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/hand.jpg"
+                        alt="Hand Talk"></a>
+
+                    <div class="tag">Research & Development</div>
+        
+                    <div class="middle">
+                        <div class="text">#Embedded_Machine_Learning #Embedded_Linux #Concept #Android</div>
+                    </div>
+
+            </div>
+
+            <div class="box" data-article="article-14">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/flutter.jpeg"
+                        alt="Flutter OS for Raspberry Pi"></a>
+
+                    <div class="tag">Research & Development</div>
+        
+                    <div class="middle">
+                        <div class="text">#OS #Flutter #Embedded_Systems #UnixLike</div>
+                    </div>
+
+
+            </div>
+
+            <div class="box" data-article="article-15">
+                <a href="#"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/stm32.jpeg"
+                        alt="Protoype of Stm32 pcb"></a>
+
+                        <div class="tag">Hardware Design</div>
+        
+                        <div class="middle">
+                            <div class="text">#STM32 #PCB #Concept #Protoytpe</div>
+                        </div>
+
+            </div>
+
+        </div>
+
         <div class="overlay">
             <div class="articles-navigation">
-                <div class="prev-btn">
-                    <div></div>
-                    <div></div>
-                </div>
+
                 <div class="close">
                     <div></div>
                     <div></div>
                 </div>
-                <div class="next-btn">
-                    <div></div>
-                    <div></div>
-                </div>
+
             </div>
         </div>
-
-        <section class="title-section">
-            <h1>Portfolio</h1>
-              <p><i><q>As My Work Is, So Am I</q> - van Gogh</i>     </p>  
-        </section>
-
-        <section class="gallery">
-            <div class="gallery-inner">
-                <div class="item grid-sizer" data-article="article-1">
-                    <a href="#_"><img class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/qoobinoo.jpg" alt="Development board">
-                        <div class="desc">
-                            <h4>Qoobinoo</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-2">
-                    <a href="#_"><img  class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/candybar.jpg"  alt="ESP32 board"/>
-                        <div class="desc">
-                            <h4>ESP32 Board</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-3">
-                    <a href="#_"><img   class="Sirv" src="https://iumenara.sirv.com/bousselmi.tn/Youpi.jpg"  alt="Youpi Smart aquarium"/>
-                        <div class="desc">
-                            <h4>Youpi - Smart Aquarium</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-4">
-                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Elissa.jpeg" alt="Elissa Linux Board">
-                        <div class="desc" data-article="article-5">
-                            <h4>Elissa Linux Board</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-5">
-                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/yumbig1.jpg" alt="Yumbig Mobile App">
-
-                        <div class="desc">
-                            <h4>Title 5</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-6">
-                    <a href="#_"><img class="Sirv" data-src="https://iumenara.sirv.com/bousselmi.tn/Bousselmi-market.jpg" alt="Bousselmi-market Mobile App">
-                        <div class="desc">
-                            <h4>Bousselmi Market</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-7">
-                    <a href="#_"><img src="https://media.istockphoto.com/id/898457432/photo/multicolored-donuts-close-up.jpg?s=2048x2048&w=is&k=20&c=ctTp2QU8hqo_rmn_zxd9GSuxXZjlWXcAEe-Ihm9lggc=" />
-                        <div class="desc">
-                            <h4>Title 7</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="item" data-article="article-8">
-                    <a href="#_"><img src="https://media.istockphoto.com/id/546019916/photo/donuts-on-color-background.jpg?s=2048x2048&w=is&k=20&c=3YgLX9IAYyZulgYSj-Vc0EaWLL88XimUkB8qOv7k3C0=" />
-                        <div class="desc">
-                            <h4>Title 8</h4>
-                        </div>
-                    </a>
-                </div>
-
-
-            </div>
-
-        </section>
 
         <section class="project-view">
             <div class="project-container">
                 <article class="project-content">
-                    <header class="project-article-header"></header>
                     <section class="project-article-content"></section>
                     <footer class="project-article-footer"></footer>
                 </article>
@@ -542,405 +496,146 @@
 
         <section id="article-contents">
             <div class="article-html" data-article="article-1">
-                <h2>Article 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Quisque consequat tincidunt sollicitudin. Vivamus
-                    et urna id diam porttitor laoreet. Cras erat justo,
-                    eleifend quis commodo sed, ultrices nec tellus. Duis fermentum, orci et porta elementum, elit ligula
-                    lobortis arcu, quis consequat ante quam sed sapien. Pellentesque molestie id tortor non sodales.
-                    Donec luctus erat et purus tincidunt, iaculis
-                    tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
-                    laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui<img
-                        src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />laoreet,
-                    id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-2">
-                <h2>Bonjour</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui<img
-                        src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" />laoreet,
-                    id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-3">
-                <h2>Comment ça va ?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem.</p>
-                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p>
-                <p> Nunc ultricies lorem vel dui laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem.
-                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p> Nunc ultricies lorem vel dui
-                laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-4">
-                <h2>Hello !</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-
-            </div>
-
-            <div class="article-html" data-article="article-5">
-                <h2>Article title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p><img src="https://img.judbibian.co.kr/goods/YE-01697/M.JPG" /></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-6">
-                <h2>Article 6</h2>
-                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
-                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
-                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-7">
-                <h2>Article 7</h2>
-                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
-                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
-                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
-            <div class="article-html" data-article="article-8">
-                <h2>Article 8</h2>
-                <p><strong>Pellentesque molestie id tortor non sodales. Donec luctus erat et purus tincidunt, iaculis
-                        tincidunt libero euismod. Mauris et erat a metus aliquam porttitor. Nunc ultricies lorem vel dui
-                        laoreet, id iaculis risus faucibus. Donec vehicula imperdiet ex, et euismod lectus.</strong></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus arcu, semper nec fermentum
-                    vitae, sodales eget orci. Morbi id bibendum sem. Nunc ultricies lorem vel dui laoreet, id iaculis
-                    risus faucibus. Donec vehicula imperdiet ex, et
-                    euismod lectus.</p>
-            </div>
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-2">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-3">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-4">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-5">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-6">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-7">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-8">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+            
+              <div class="article-html" data-article="article-9">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-10">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-11">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-12">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-13">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-14">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
+              
+              <div class="article-html" data-article="article-15">
+                <h2>Under Construction</h2>
+                <p>We're currently working on something awesome. Please check back later!</p>
+                <img src="/assets/images/work/construction.png" alt="Under Construction">
+              </div>
         </section>
-    -->
 
-    
+
     </main>
     <script>
         $('.gallery-inner').isotope({
-    itemSelector: '.item',
-    masonry: {
-        columnWidth: '.grid-sizer',
-        gutter: 1
-    }
-}).isotope('layout');
+            itemSelector: '.item',
+            masonry: {
+                columnWidth: '.grid-sizer',
+                gutter: 1
+            }
+        }).isotope('layout');
 
-var i = null;
+        var i = null;
 
-$('.gallery-inner .item').on('click', function(event) {
-    event.stopPropagation();
+        $('.container .box').on('click', function (event) {
+            event.stopPropagation();
 
-    var clickedArticle = $(this);
-    var thisIndex = $(this).index();
+            var clickedArticle = $(this);
+            var thisIndex = $(this).index();
 
-    imgToShow = clickedArticle.find('img').attr('src');
-    articleLink = clickedArticle.data('article');
-    articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
-    articleTitle = clickedArticle.find('.desc h4').html();
-    i = clickedArticle.index();
-    var n = 1;
+            imgToShow = clickedArticle.find('img').attr('src');
+            articleLink = clickedArticle.data('article');
+            articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
+            articleTitle = clickedArticle.find('.desc h4').html();
+            i = clickedArticle.index();
+            var n = 1;
 
-    changeArticle();
+            changeArticle();
 
-    $('.next-btn').click(function(event) {
-        event.stopPropagation();
-        
-        i++;
-        
-        if (i > $('.item').length - 1) {
-            i = 0;
-        }
+            function changeArticle() {
+                $('.project-container').hide();
+                $('.project-view .project-article-content').html('<div class="appended-data">' + articleData + '</div>');
+                $('.project-article-header').html('<div class="project-article-title"><h1>' + articleTitle + '</h1></div>');
 
-        var clickedArticle = $('.item:eq(' + (i) + ')');
+                $('.project-container').fadeIn(500);
+            }
 
-        console.log('New article ' + i + ' : ');
-        console.log(clickedArticle);
-        imgToShow = clickedArticle.find('img').attr('src');
-        articleLink = clickedArticle.data('article');
-        articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
-        articleTitle = clickedArticle.find('.desc h4').html();
-
-        changeArticle();
-    });
-
-    $('.prev-btn').click(function(event) {
-        event.stopPropagation();
-        
-        i--;
-        
-        if (i < 0 ) {
-            i = $('.item').length - 1;
-        }
-
-        var clickedArticle = $('.item:eq(' + i + ')');
-        console.log('New article ' + i + ' : ');
-        console.log(clickedArticle);
-        imgToShow = clickedArticle.find('img').attr('src');
-        articleLink = clickedArticle.data('article');
-        articleData = $('#article-contents').find('.article-html[data-article="' + articleLink + '"]').html();
-        articleTitle = clickedArticle.find('.desc h4').html();
-
-        changeArticle();
-    });
-
-    function changeArticle() {
-        $('.project-container').hide();
-
-        $('.project-view .project-article-header').css({
-            'background': 'url(' + imgToShow + ') no-repeat top fixed'
+            if (!$('body').hasClass('article-opened')) {
+                $('body').addClass('article-opened');
+            } else {
+                $('body').removeClass('article-opened');
+            }
         });
 
-        $('.project-view .project-article-content').html('<div class="appended-data">' + articleData + '</div>');
-        $('.project-article-header').html('<div class="project-article-title"><h1>' + articleTitle + '</h1></div>');
+        $('.project-view').on('click', function (event) {
+            event.stopPropagation();
+        });
 
-        $('.project-container').fadeIn(500);
-    }
-
-    if (!$('body').hasClass('article-opened')) {
-        $('body').addClass('article-opened');
-    } else {
-        $('body').removeClass('article-opened');
-    }
-});
-
-$('.project-view').on('click', function(event) {
-    event.stopPropagation();
-});
-
-$('html, body, .overlay, .close').on('click', function() {
-    $('body').removeClass('article-opened');
-});
+        $('html, body, .overlay, .close').on('click', function () {
+            $('body').removeClass('article-opened');
+        });
     </script>
     <div id="footer"></div>
 </body>
