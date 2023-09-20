@@ -16,7 +16,6 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="manifest.webmanifest">
 
     <meta property="og:title"
         content="The personal Web site of Bessem Bousselmi — Embedded product developer and trainer">
@@ -43,7 +42,20 @@
 
 
     <!-- The page supports both dark and light color schemes, and the page author prefers light. Use this in combination with custom styles using prefers-color-scheme in your CSS -->
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="light">
+    <script>
+
+window.addEventListener('load', function () {
+    // Hide the loading screen
+    const loadingScreen = document.querySelector('.loading-container');
+    loadingScreen.style.display = 'none';
+
+    const maincontent = document.getElementById("contnet");
+    maincontent.style.display = "block";
+    maincontent.style.opacity = "1";
+});
+
+    </script>
     <!-- Modern Cutting the Mustard -->
     <script type="module">
         // This is a capable browser, let's enhance the UI further!
@@ -51,10 +63,42 @@
         document.documentElement.classList.remove('no-js');
     </script>
 
-    <!-- Fonts -->
-    <link rel="preload" href="assets/fonts/Inter/Inter-VariableFont_slnt%2cwght-subset.woff2" as="font"
-        type="font/woff2" crossorigin>
     <style>
+        .main-content{
+            display:none;
+            opacity: 0; 
+            transition: opacity 0.2s; 
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+        
+
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         @font-face {
             font-family: "Inter";
             src: url("https://d33wubrfki0l68.cloudfront.net/f63a3410d1cbfcde4f758e72757035843af83e11/87a97/assets/fonts/inter/inter-variablefont_slnt,wght-subset.woff2") format("woff2"),
@@ -66,7 +110,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            padding: 5px;
+            padding: 5px;https://witekio.com/category/case-studies/
         }
 
         .grid-item {
@@ -79,11 +123,15 @@
 
     <!-- Stylesheets. Don’t forget print. -->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <link rel="stylesheet" href="assets/css/lite-yt-embed.css" />
 </head>
 
-<body class="">
+<body>
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+
+    <div  id="contnet" class="main-content"> 
+        
     <a href="#main" id="skip-link">Skip to main content</a>
 
     <header class="site-header" id="site-header">
@@ -539,7 +587,7 @@
         </footer>
 
     </div>
-    <script src="assets/js/lite-yt-embed.js"></script>
+</div> 
 </body>
 
 </html>
