@@ -1,4 +1,6 @@
-### Hi there 👋
+### Hi there  - عسلامة 👋
+
+![Mes statistiques](https://github-readme-stats-iota-taupe.vercel.app/api?username=Bsm-B&show_icons=true&theme=tokyonight)
 
 first visit my personal website : http://www.bousselmi.tn
 
