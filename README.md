@@ -1,6 +1,7 @@
 ### Hi there  - عسلامة 👋
 
-![Mes statistiques](https://github-readme-stats-iota-taupe.vercel.app/api?username=Bsm-B&show_icons=true&theme=tokyonight)
+
+![Bassbousa GitHub stats](https://github-readme-stats.vercel.app/api?username=Bsm-B\&bg_color=30,e96443,904e95\&title_color=fff\&text_color=fff)
 
 first visit my personal website : http://www.bousselmi.tn
 
