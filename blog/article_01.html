@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<meta charset="UTF-8">
+
+<head>
+    <title>Bessem - 🍩 Who am I</title>
+    <!-- The favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+
+    <meta property="og:title" content="How I Built a Full IoT Infrastructure Without AWS or Blynk — DIY with
+    Open-Source Tools">
+    <meta property="og:description" content="By Bessem Bousselmi">
+    <meta property="og:image" content="../assets/images/basboussa/Bessem.png" />
+
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("..//template/header.html");
+            $("#footer").load("../template/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main id="main">
+
+
+
+        <section class="slice">
+            <div class="content-container grid">
+                <header style="grid-column: 1 / 9;">
+                    <h2 id="interviews">How I Built a Full IoT Infrastructure Without AWS or Blynk — DIY with Infra as Code & Open-Source Tools  
+                    </h2>
+
+                </header>
+                <div style="grid-column: 1 / 9;">
+                    <h4>Learn how I created a production-ready IoT pipeline—from EMQX MQTT broker to Grafana dashboards—in 5 minutes using only open-source tools and Infrastructure as Code for my real-time sea turtle tracking project, Fakrouna 🐢.
+                    </h4>
+                    <p class="slice__description">
+                        When I was building my project Fakrouna (فكرونة) a system to track endangered sea turtles in
+                        real time—I first considered services like Blynk, AWS IoT, and Google Cloud IoT. But I wanted
+                        something fully under my control, vendor-free, and cost-effective.
+
+                        So I decided to go all-in with DIY infrastructure, using only open-source tools and deploying
+                        everything with Infrastructure as Code.
+
+                    </p>
+                    <p>
+                        💡 The result? A complete IoT stack—from Devices to database, monitoring, and
+                        visualization—fully
+                        operational in just 5 minutes on my VPS 🚀.
+
+                    </p>
+                    <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/dashboard.png"
+                    alt="dashboard" width="1200px">
+                    <h6>Fakrouna Dashboard for monitoring connected devices</h6>
+        
+                    <p>
+
+                        👉 These platforms seemed convenient…
+
+                    <dl>
+                        <dd>✅ Scalable </dd>
+                        <dd>✅ Ready-made dashboards </dd>
+                        <dd>✅ Cloud-based </dd>
+                    </dl>
+
+                    </p>
+                    <p>
+                        But then I asked myself:
+                    <blockquote>
+                        💭 “Why not build my own full-stack infrastructure—completely self-hosted—with open-source
+                        tools, on my own VPS?”
+                    </blockquote>
+
+                    </p>
+                    <p>
+                        That decision led to Fakrouna’s architecture, which is now a production-ready system that
+                        receives real-time data, stores it securely, monitors performance, and visualizes it all
+                        dynamically—no cloud dependencies.
+                        In this article, I’ll share exactly how I built this infrastructure from scratch—and how you can
+                        too 👇
+
+                        
+                    </p>
+
+                    <h4> 🌊 The Fakrouna Mission</h4>
+                    <p>
+
+                        🐢 Fakrouna’s goal is to track sea turtles’ movements using GPS devices attached to their
+                        shells. We collect real-time data like location and battery level and aim to analyze migration
+                        patterns and protect habitats.
+                
+                        <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/overview_infra_iot.png"
+                        alt="iot infrastructure overview" width="1200px">
+
+                    <ul>
+                        <li> Receive data reliably over MQTT</li>
+                        <li>Store telemetry data safely</li>
+                        <li>Monitor system health &amp; performance</li>
+                        <li>Visualize the data (real-time maps, metrics)</li>
+                    </ul>
+                    </p>
+
+
+                    <h4> 🔗 My DIY Dataflow Pipeline</h4>
+                    <p>
+                        Here’s the full data pipeline I built for Fakrouna:
+                        <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/dataflow.png"
+                        alt="iot infrastructure overview" width="1200px">
+                   
+                    </p>
+
+
+                    <h4>🖥️ Why This Stack?</h4>
+
+                    <ul>
+                        <li><strong>EMQX Enterprise:</strong> Industrial-grade MQTT broker</li>
+                        <li><strong>MySQL:</strong> Trusted relational database for telemetry</li>
+                        <li><strong>Prometheus:</strong> Scrapes broker metrics for performance monitoring</li>
+                        <li><strong>Grafana:</strong> Beautiful dashboards &amp; data visualization</li>
+                        <li><strong>MQTT Exporter:</strong> Optional data routing to other services</li>
+                    </ul>
+                    <p>💡 <strong>The result?</strong>
+                        A fully vendor-free, self-hosted, scalable, and transparent system.</p>
+                    <br>
+
+
+                    <h3> <strong>Let's play with some code... </strong></h3>
+<div class="tenor-gif-embed" data-postid="11762341" data-share-method="host" data-aspect-ratio="1.33871" data-width="50%"><a href="https://tenor.com/view/typing-peter-griffin-long-nails-family-guy-gif-11762341">Typing Peter Griffin GIF</a>from <a href="https://tenor.com/search/typing-gifs">Typing GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                        <br>
+                    <h4> Infrastructure as Code with Docker Compose 🐳 🐙</h4>
+
+                    <p>To make the system easy to deploy and reproducible anywhere, I used Docker Compose—a perfect tool
+                        for Infrastructure as Code.
+                        With just one file (docker-compose.yml), I can:
+                    <dl>
+                        <dd>- Define every service (EMQX broker, database, Prometheus, Grafana, etc.)</dd>
+                        <dd> - Specify dependencies (e.g., Prometheus waits for EMQX to be healthy)</dd>
+                        <dd>- Configure volumes & environment variables (e.g., Grafana templates, database
+                            initialization scripts)</dd>
+                        <dd>- Bring up the entire infrastructure with a single command </dd>
+                    </dl>
+                    </p>
+
+                    <h4>Check out the GitHub Repo!</h4>
+                    <p>For more details, visit the repository:</p>
+                    <a href="https://github.com/Bsm-B/Fakrouna-iot-Infrastructure" target="_blank">
+                    <img src="https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge" alt="GitHub Repository Badge">
+                    </a>
+                    <br>
+
+                    <div class="tenor-gif-embed" data-postid="17785531" data-share-method="host" data-aspect-ratio="1" data-width="15%"><a href="https://tenor.com/view/be-doo-be-doo-minion-despicable-me-alert-warning-gif-17785531">Be Doo Be Doo Minion GIF</a>from <a href="https://tenor.com/search/be+doo+be+doo-gifs">Be Doo Be Doo GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                    <h5> 👀 Don't forget to put ⭐ </h4>
+
+                    <br>
+                  <h3>Let's build Fully IoT Infrastructure in some lines</h3>
+
+                    <script src="https://gist.github.com/Bsm-B/097ff04e1e9636ef6cf4cf796fb9ba22.js"></script>
+
+
+                    <h4>How It Works ! (Service by Service)</h4>
+
+                    <p>Here’s a breakdown of what’s inside the Docker Compose—and what you need to customize for your own project 👇</p>
+                    
+                    <dl>
+                        <dt><code>emqx-enterprise</code>:</dt>
+                        <dd>The MQTT broker that handles device connections.</dd>
+                        <dd>
+                            <ul>
+                                <li>You’ll need to <strong>edit <code>cluster.hocon</code></strong> to match your network or cluster settings.</li>
+                                <li>The <strong><code>api_secret</code> file</strong> contains your authentication credentials—<strong>replace these with your own secure keys.</strong></li>
+                            </ul>
+                        </dd>
+                    
+                        <dt><code>emqx-exporter</code>:</dt>
+                        <dd>This service <strong>exposes EMQX metrics</strong> for Prometheus to scrape.</dd>
+                        <dd>
+                            <ul>
+                                <li>Change the <strong>auth username &amp; password</strong> in the <code>command</code> section to <strong>match your EMQX setup.</strong></li>
+                            </ul>
+                        </dd>
+                    
+                        <dt><code>mysql</code>:</dt>
+                        <dd>The <strong>database</strong> that stores telemetry data.</dd>
+                        <dd>
+                            <ul>
+                                <li>The <code>create-table.sql</code> file is where you define your <strong>database schema</strong>. If your IoT devices send different data, you’ll need to <strong>adjust the SQL queries and table structure</strong> accordingly.</li>
+                            </ul>
+                        </dd>
+                    
+                        <dt><code>prometheus</code>:</dt>
+                        <dd>Scrapes metrics from EMQX Exporter.</dd>
+                        <dd>
+                            <ul>
+                                <li>Make sure your <strong>Prometheus config (<code>prometheus.yaml</code>)</strong> points to the <strong>correct targets</strong> and adjust the <strong>scrape intervals</strong> if needed.</li>
+                            </ul>
+                        </dd>
+                    
+                        <dt><code>grafana</code>:</dt>
+                        <dd>Visualizes everything.</dd>
+                        <dd>
+                            <ul>
+                                <li>You’ll find <strong>Grafana provisioning templates</strong> in the <code>grafana-provisioning</code> folder.</li>
+                                <li>To fit your own project, you need to <strong>edit dashboard templates and SQL queries</strong> to reflect your <strong>custom data model.</strong></li>
+                                <li>For example, in Fakrouna, I created panels that <strong>query turtle positions and battery status</strong>—for your project, you might track temperature, humidity, etc.</li>
+                            </ul>
+                        </dd>
+                    
+                        <dt><code>mqtt-exporter</code>: <em>(optional)</em></dt>
+                        <dd>This is a <strong>custom service</strong> to export or route MQTT data elsewhere.</dd>
+                        <dd>
+                            <ul>
+                                <li>If you plan to forward data to other APIs or services, modify the <strong>logic inside this container</strong> to match your pipeline.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+         
+
+                    <h5>Key Reminder:</h5>
+                    This setup gives you a <strong>ready-to-use framework</strong>, but <strong>you’ll need to customize:</strong></p>
+                    <ul>
+                        <li>➔ <strong>MQTT topics &amp; payloads</strong> (based on your device’s data structure)</li>
+                        <li>➔ <strong>MySQL schema &amp; queries</strong> (to match your telemetry)</li>
+                        <li>➔ <strong>Grafana panels &amp; queries</strong> (for your visualization needs)</li>
+                        <li>➔ <strong>EMQX dataflow (rules &amp; forwarding)</strong> if you need advanced routing or transformations.</li>
+                    </ul>
+                    <dl>
+                        <dt>💡 <strong>For Fakrouna, I customized:</strong></dt>
+                       <dd>- MQTT topic: <code>fakrouna/data</code></dd> 
+                       <dd>- SQL: A table to store <code>turtle_id</code>, <code>lat</code>, <code>lon</code>, and <code>battery</code></dd> 
+                       <dd>- Grafana: Dashboards that display real-time turtle tracking on a map 🐢📍</dd> 
+                    </dl>
+                
+
+                    <blockquote>
+                        💬 Q: Have you tried building your own IoT infrastructure? What tools did you use? Drop your
+                        experiences below 👇
+                    </blockquote>
+
+                    <h4>🚀 Spin It All Up (One Command) </h4>
+                    <p>Spin up the full stack with:</p>
+                    
+                    <blockquote>
+                    <code>
+
+                        docker-compose up --build
+
+                    </code>
+                 </blockquote>
+                    <br>
+                    <p> Access your stack:
+                    <dl>
+                        <dd>-EMQX Dashboard: <a href="#">http://localhost:18083 </a></dd>
+                        <dd>-Prometheus: <a href="#">http://localhost:9090 </a></dd>
+                        <dd>-Grafana: <a href="#">http://localhost:3000 </a> -> (admin/public)</dd>
+                    </dl>
+                    <h6>Grafana Dashboard</h6>
+                    <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/dashboard_2.png"
+                    alt="dashboard" width="1200px">
+                   
+                    <br>
+
+                    <h4>🔍 Final Words </h4>
+                    <p>
+
+                        Fakrouna taught me that DIY IoT infrastructure is absolutely achievable with the right
+                        open-source tools. You don’t need to rely on AWS or other managed services—you can own your
+                        stack from broker to dashboard.
+
+                        👀 Building something similar? Have questions? Drop a comment below or connect—I’m always happy
+                        to exchange ideas
+
+                    <h5>Contact bassbousa ---> Contact@bousselmi.tn</h5>
+
+                    #IoT #MQTT #Docker #Grafana #Prometheus #EMQX #InfrastructureAsCode #TechForGood #Fakrouna
+                    #Monitoring #Visualization #OpenSource #IoTPlatform
+                    </p>
+
+                </div>
+
+
+        </section>
+
+
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
