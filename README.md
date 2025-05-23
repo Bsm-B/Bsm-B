@@ -3,7 +3,7 @@
 
 ![Bassbousa GitHub stats](https://github-readme-stats.vercel.app/api?username=Bsm-B\&bg_color=30,e96443,904e95\&title_color=fff\&text_color=fff)
 
-first visit my personal website : http://www.bousselmi.tn
+first visit my personal website : https://bousselmi.tn
 
 - 🔭 I’m currently working on Fakrouna Project
 - 🌱 I’m currently learning on Hardware Product
