@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<meta charset="UTF-8">
+
+<head>
+    <title>How I Turned a $7 Perfume Dispenser Into a Real-World Alexa Fart</title>
+    <meta name="title" property="og:title" content="How I Turned a $7 Perfume Dispenser Into a Real-World Alexa Fart">
+    <meta name="description" property="og:description"
+        content="A story about escaping management to build a perfume dispenser controlled by Alexa using an ESP8266.">
+    <meta name="image" property="og:image" content="https://iumenara.sirv.com/bousselmi.tn/room.jpeg" />
+    <meta property="og:url" content="https://bousselmi.tn">
+    <meta property="og:site_name" content="bousselmi">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta name="keywords"
+        content="hardware hacking, esp8266, alexa, iot, diy, embedded systems, management, engineering">
+    <meta name="author" content="Bessem Bousselmi">
+    <meta name="robots" content="index, follow">
+
+    <!-- The favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("..//template/header.html");
+            $("#footer").load("../template/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main id="main">
+
+        <section class="slice">
+            <div class="content-container grid">
+                <header style="grid-column: 1 / 9;">
+                    <h2 id="escaped-excel">How I Turned a $7 Perfume Dispenser Into a Real-World Alexa Fart</h2>
+
+                    <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/room.jpeg" alt="dashboard"
+                        width="800px">
+                </header>
+
+
+
+
+                <div style="grid-column: 1 / 9;">
+                    <p class="slice__description">
+                        Let me ask you something.
+                        <br><br>
+                        Have you ever opened Excel… and suddenly realized you haven’t touched real hardware in years?
+                        <br><br>
+                        No solder.
+                        No burnt fingers.
+                        No mysterious smoke.
+                        Just conditional formatting and “Let’s align on this.”
+                        <br><br>
+                        Yeah.
+                        <br><br>
+                        That was me.
+                        <br><br>
+                        After some experiance in management (of course with My PMP 😁 ), I reached a dangerous
+                        conclusion:
+                        <br><br>
+                        <strong>I miss building stupid things.</strong>
+                        <br><br>
+                        Not “strategic”.
+                        Not “scalable”.
+                        Not “cross-department aligned”.
+                        <br><br>
+                        Stupid.
+                        <br><br>
+                        And beautiful.
+                    </p>
+
+                    <h4>The $7 Device That Started It All</h4>
+                    <p>
+                        In my lab "Qoobeelab" drawer (the one labeled “future genius ideas”), I found a perfume
+                        dispenser.
+                    </p>
+                    <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/diff_opend.jpeg"" alt="
+                        dashboard" width="500px">
+                    <dl>
+                        <dt>Cost:</dt>
+                        <dd>$7</dd>
+                        <dt>Brain:</dt>
+                        <dd>Tiny ASIC</dd>
+                        <dt>Features:</dt>
+                        <dd>- Spray every 36 minutes</dd>
+                        <dd>- Spray every 18 minutes</dd>
+                        <dd>- Spray every 9 minutes</dd>
+                    </dl>
+                    <p>
+                        That’s it.
+                        <br>
+                        No Wi-Fi. No API. No dignity.
+                        <br><br>
+                        And I thought: <strong>What if this thing answered to Alexa?</strong>
+                        <br><br>
+                        Yes. That thought happened.
+                    </p>
+
+                    <h4>Choose Your Path</h4>
+                    <p>At this point, I had two engineering roads:</p>
+
+                    <h5>🅰️ The Embedded Purist Path</h5>
+                    <ul>
+                        <li>ATtiny13</li>
+                        <li>IR remote</li>
+                        <li>Precise timing</li>
+                        <li>Beautiful minimalism</li>
+                    </ul>
+
+                    <h5>🅱️ The “Why Not Wi-Fi” Path</h5>
+                    <ul>
+                        <li>ESP8266</li>
+                        <li>Cloud</li>
+                        <li>Voice assistant</li>
+                        <li>Overkill energy</li>
+                    </ul>
+
+                    <p>
+                        Guess which one I chose.
+                        <br><br>
+                        Correct.
+                        <br><br>
+                        I found zero ATtiny chips at home.
+                        <br>
+                        But I did find a box full of ESP-01 modules staring at me like:
+                        <br>
+                        <em>“Use us. You know you want to.”</em>
+                        <br><br>
+                        So I did.
+                    </p>
+
+                    <h4>Management Brain vs Engineering Brain</h4>
+                    <p>Writing C++ again after years of meetings is… strange.</p>
+
+                    <p>My brain was still optimized for:</p>
+                    <ul>
+                        <li>“Circle back”</li>
+                        <li>“Let’s schedule another sync”</li>
+                        <li>“Can we document this?”</li>
+                    </ul>
+
+                    <p>Meanwhile the ESP8266 just wanted:</p>
+                    <pre><code>
+digitalWrite(pin, HIGH);
+delay(500);
+digitalWrite(pin, LOW);
+                    </code></pre>
+                    <p>
+                        No alignment.
+                        No stakeholders.
+                        Just voltage.
+                        <br><br>
+                        Beautiful.
+                    </p>
+
+                    <h4>Alexa vs Me (Round 1… 7… 12…)</h4>
+                    <p>I tried local control first. Because real engineers avoid cloud dependency, right?</p>
+                    <p>I tested:</p>
+                    <ul>
+                        <li>Espalexa</li>
+                        <li>fauxmoESP</li>
+                        <li>Hue emulators</li>
+                    </ul>
+                    <p>
+                        Alexa discovered nothing.
+                        <br>
+                        Nothing.
+                        <br>
+                        Just silence.
+                    </p>
+                    <p>Here’s what Alexa expects during discovery:</p>
+                    <ul>
+                        <li>SSDP multicast response</li>
+                        <li>Perfect XML device description</li>
+                        <li>Specific service IDs</li>
+                    </ul>
+                    <p>
+                        If one character is wrong? She ignores you.
+                        <br>
+                        No logs. No warning. Just ghosted.
+                    </p>
+                    <p>
+                        At that point I had a decision:
+                        <br>
+                        Fight network protocols for 3 days
+                        <br>
+                        <strong>or</strong>
+                        <br>
+                        Use something that works
+                        <br><br>
+                        So yes. I went cloud.
+                    </p>
+
+                    <h4>The Cloud Shortcut (Forgive Me)</h4>
+                    <p>I used Sinric Pro.</p>
+                    <p>Why?</p>
+                    <ul>
+                        <li>5 devices free</li>
+                        <li>Alexa integration in minutes</li>
+                        <li>Reliable</li>
+                    </ul>
+                    <p>
+                        Average command latency: ~400ms.
+                        <br>
+                        Which is perfectly acceptable for… <strong>Strategic fragrance deployment.</strong>
+                    </p>
+
+                    <h4>Now the Real Fun: Hardware Hacking</h4>
+                    <p>I opened the perfume device.</p>
+                    <p>Inside?</p>
+                    <ul>
+                        <li>A button.</li>
+                        <li>Two pads.</li>
+                    </ul>
+
+                    <img style="padding: 50px;" src="https://iumenara.sirv.com/bousselmi.tn/diff_buttin.jpeg"" alt="
+                        dashboard" width="500px">
+                    <p>
+                        When shorted: <strong>PSSHHH.</strong>
+                        <br>
+                        That’s it.
+                        <br>
+                        The simplest hardware hack ever.
+                        <br>
+                        So the mission became: <strong>Make ESP8266 pretend to be a finger.</strong>
+                    </p>
+
+                    <h4>Why I Used an Optocoupler (Because I Like My ESP Alive)</h4>
+                    <p>
+                        Could I have used a transistor? Yes.
+                        <br>
+                        Did I trust a $7 mystery PCB with my Wi-Fi module? Absolutely not.
+                    </p>
+                    <p>So I used an optocoupler.</p>
+                    <p>Benefits:</p>
+                    <ul>
+                        <li>Electrical isolation</li>
+                        <li>No shared ground required</li>
+                        <li>No unexpected voltage surprises</li>
+                    </ul>
+
+                    <img style="padding: 20px;" src="https://iumenara.sirv.com/bousselmi.tn/pcb_v1.jpeg"" alt="
+                        dashboard" width="500px">
+                    <p>
+                        ESP side → LED
+                        <br>
+                        Perfume side → Phototransistor
+                        <br><br>
+                        Clean. Safe. Engineer-approved.
+                    </p>
+
+                    <h4>Mistake Time (Of Course)</h4>
+                    <p>Classic ESP8266 error:</p>
+                    <p>I connected the optocoupler to a boot-sensitive GPIO.</p>
+                    <p>ESP8266 boot depends on:</p>
+                    <ul>
+                        <li>GPIO0</li>
+                        <li>GPIO2</li>
+                        <li>GPIO15</li>
+                    </ul>
+                    <p>
+                        If those are wrong at startup? It refuses to boot.
+                        <br>
+                        No error. No message. Just silent judgment.
+                    </p>
+                    <p>After one hour of confusion, I fixed it:</p>
+                    <ul>
+                        <li>Moved to safe GPIO</li>
+                        <li>Added pull-ups</li>
+                        <li>Added diode to prevent backfeed</li>
+                    </ul>
+                    <p>
+                        Now it booted perfectly.
+                        <br><br>
+                        <strong>Lesson:</strong> ESP8266 GPIO selection is not “just a pin choice.” It’s destiny.
+                    </p>
+
+                    <h4>Power Matters More Than You Think</h4>
+                    <p>Wi-Fi transmission spikes can hit ~300mA.</p>
+                    <p>Without proper power:</p>
+                    <ul>
+                        <li>Random resets</li>
+                        <li>Weird behavior</li>
+                        <li>Phantom reboots</li>
+                    </ul>
+                    <p>So I added:</p>
+                    <ul>
+                        <li>Stable 3.3V regulator</li>
+                        <li>100µF capacitor near VCC</li>
+                        <li>Short ground paths</li>
+                    </ul>
+                    <p>
+                        And suddenly it behaved like a professional device.
+                        <br>
+                        Instead of a chaotic student project.
+                    </p>
+
+                    <img style="padding: 20px;" src="https://iumenara.sirv.com/bousselmi.tn/pcb_v2.jpeg" alt="
+                        dashboard" width="500px">
+
+                    <h4>The Moment</h4>
+                    <p>
+                        Everything wired.
+                        <br>
+                        Solder everywhere.
+                        <br>
+                        No case.
+                        <br>
+                        Pure lab chaos.
+                    </p>
+                    <p>
+                        I looked at Alexa.
+                        <br>
+                        And said:
+                        <br>
+                        <strong>“Alexa… fart.”</strong>
+                    </p>
+
+                    <iframe width="315" height="560" src="https://youtube.com/shorts/D8yT49IEHCs?si=2AgIFZeSdFaqD4sc"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    
+                    <p>
+                        Alexa made a dramatic fart 💨💨 sound.
+                        <br><br>
+                        At the same time:
+                        <br>
+                        Cloud received command -> ESP8266 processed request -> Optocoupler closed circuit -> Perfume
+                        device triggered
+                        <br>
+                        <strong>PSSHHH. 💨</strong>
+                        <br><br>
+                        The room smelled incredible.
+                        <br>
+                        I laughed like a villain in a low-budget sci-fi movie.
+                    </p>
+
+
+
+                    <h4>What This Was Really About</h4>
+
+                    <p>
+                        Yes, it’s funny.
+                        <br>
+                        Yes, it’s unnecessary.
+                        <br><br>
+                        But it reminded me of something important:
+                        <br><br>
+                        Engineering isn’t only about production systems.
+                        <br>
+                        It’s about curiosity.
+                        <br>
+                        Experimentation.
+                        <br>
+                        Burnt fingers.
+                        <br>
+                        And building things that make you laugh.
+                        <br><br>
+                        For one night, I wasn’t in Excel.
+                        <br>
+                        I was in my lab.
+                        <br><br>
+                        And Alexa obeyed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
